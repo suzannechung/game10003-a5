@@ -11,7 +11,12 @@ public class Player : MonoBehaviour
     [SerializeField] private Rigidbody2D rb2d;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private GameManager gameManager;
+    [SerializeField] private AudioSource lasershoot;
 
+    private void Start()
+    {
+        lasershoot = GetComponent<AudioSource>();
+    }
 
     private void Update()
     {
@@ -19,6 +24,7 @@ public class Player : MonoBehaviour
         int leftClickID = 0;
         if (Input.GetMouseButtonDown(leftClickID))
         {
+            lasershoot.PlayOneShot(lasershoot.clip);
             // Bullet transform information when spawned
             Vector3 pos = transform.position + transform.up;
             Quaternion rot = Quaternion.identity;
