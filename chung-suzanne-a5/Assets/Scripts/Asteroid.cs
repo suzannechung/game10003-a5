@@ -8,9 +8,12 @@ public class Asteroid : MonoBehaviour
     public int subdivisionLevel = 0;
     public GameObject[] asteroids;
     public bool RandomizeStartVelocity = true;
+    public AudioSource explode;
+
 
     void Start()
     {
+
         if (RandomizeStartVelocity)
         {
             // Create random point on unit circle

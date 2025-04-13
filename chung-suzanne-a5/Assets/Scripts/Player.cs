@@ -24,7 +24,9 @@ public class Player : MonoBehaviour
         int leftClickID = 0;
         if (Input.GetMouseButtonDown(leftClickID))
         {
+            //play shooting sound on left click
             lasershoot.PlayOneShot(lasershoot.clip);
+
             // Bullet transform information when spawned
             Vector3 pos = transform.position + transform.up;
             Quaternion rot = Quaternion.identity;
